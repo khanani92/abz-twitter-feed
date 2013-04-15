@@ -1,4 +1,4 @@
-=== Wp Twitter Feeds ===
+=== Twitter Feeds ===
 Contributors: application bakers
 Donate link: http://www.appbakerz.com/wp-plugins/wp-twitter-feeds/donate/
 Tags: twitter, tweets, twitter feeds, infinite twitter feeds, infinile, ajax, backbonejs, multilingual

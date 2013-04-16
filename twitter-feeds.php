@@ -29,7 +29,37 @@ Version: 0.1
 
 define( 'TFS_VERSION', '0.1' );
 
-define( 'TFS_REQUIRED_WP_VERSION', '4.0' );
+define( 'TFS_REQUIRED_WP_VERSION', '3.0' );
+
+if ( ! defined( 'TFS_PLUGIN_BASENAME' ) )
+	define( 'TFS_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+
+//if ( ! defined( 'TFS_PLUGIN_NAME' ) )
+//	define( 'TFS_PLUGIN_NAME', trim( dirname( WPCF7_PLUGIN_BASENAME ), '/' ) );
+
+if ( ! defined( 'TFS_PLUGIN_DIR' ) )
+	define( 'TFS_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
+
+if ( ! defined( 'TFS_PLUGIN_URL' ) )
+	define( 'TFS_PLUGIN_URL', untrailingslashit( plugins_url( '', __FILE__ ) ) );
+
+if ( ! defined( 'TFS_LOAD_JS' ) )
+	define( 'WPCF7_LOAD_JS', true );
+
+if ( ! defined( 'TFS_LOAD_CSS' ) )
+	define( 'TFS_LOAD_CSS', true );
+
+if ( ! defined( 'TFS_AUTOP' ) )
+	define( 'WPCF7_AUTOP', true );
+
+if ( ! defined( 'TFS_USE_PIPE' ) )
+	define( 'TFS_USE_PIPE', true );
+
+
+if ( is_admin() )
+	require_once TFS_PLUGIN_DIR . '/admin/admin.php';
+	
+
 
 /**
 *
@@ -41,10 +71,10 @@ function tfs_show_admin_message($message, $errormsg = false)
 		echo '<div id="message" class="error">';
 	}
 	else {
-		echo '<div id="message" class="updated fade">';
+		echo '<div id="message" class="updated">';
 	}
 
-	echo "<p><strong>$message</strong></p></div>";
+	echo "<p>$message</p></div>";
 }
 /**
 * Check  that the current version of WordPress is current enough.
@@ -55,7 +85,7 @@ function tfs_show_admin_message($message, $errormsg = false)
 function tfs_check_wordpress_version(){
 	global $wp_version;
 	
-	$msg =  sprintf( __( 'Twitter Feeds %1$s requires WordPress %2$s or higher. Please <a href="%3$s">Update WordPress</a> first.', 'tfs' ), TFS_VERSION, TFS_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) );
+	$msg =  sprintf( __( '<strong>Twitter Feeds %1$s</strong> requires WordPress %2$s or higher. Please <a href="%3$s">Update WordPress</a> first.', 'tfs' ), TFS_VERSION, TFS_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) );
 		
 	if(version_compare($wp_version, TFS_REQUIRED_WP_VERSION, '<'))
 	{

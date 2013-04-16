@@ -1,2 +1,2 @@
-wp-twitter-feeds
+twitter-feeds
 ================

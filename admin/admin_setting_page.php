@@ -1,14 +1,14 @@
 <?php
 add_action( 'admin_menu', 'my_admin_menu' );
 function my_admin_menu() {
-	add_options_page( 'Twitter Feeds', 'Twitter Feeds', 'manage_options', 'twitter-feeds', 'tfs_options_page' );
+	add_options_page( __('Twitter Feeds', 'tfs'), __('Twitter Feeds', 'tfs'), 'manage_options', 'twitter-feeds', 'tfs_options_page' );
 }
  
 function tfs_options_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2>Twitter Feeds Options</h2>
+		<h2><?php printf( __('Twitter Feeds Options', 'tfs') ) ?></h2>
 		<form action="options.php" method="POST">
 			<?php settings_fields( 'tfs-settings-group' ); ?>
 			<?php do_settings_sections( 'tfs-plugin' ); ?>
@@ -23,16 +23,16 @@ function my_admin_init() {
 	register_setting( 'tfs-settings-group', 'tfs-settings' );
  
 	// Sections
-	add_settings_section( 'section-one', 'Section One', 'section_one_callback', 'tfs-plugin' );
+	add_settings_section( 'section-one', __('Section One', 'tfs'), 'section_one_callback', 'tfs-plugin' );
  
 	// Fields
-	add_settings_field( 'field-one', 'Field One', 'field_one_callback', 'tfs-plugin', 'section-one' );
-	add_settings_field( 'field-two', 'Field Two', 'field_two_callback', 'tfs-plugin', 'section-one' );
+	add_settings_field( 'field-one', __('Field One', 'tfs'), 'field_one_callback', 'tfs-plugin', 'section-one' );
+	add_settings_field( 'field-two', __('Field Two', 'tfs'), 'field_two_callback', 'tfs-plugin', 'section-one' );
 }
 $settings = get_option( 'tfs-settings' );
  
 function section_one_callback() {
-	echo "Some help text goes here.";
+	printf(__('Some help text goes here. ', 'tfs'));
 }
  
 function field_one_callback() {

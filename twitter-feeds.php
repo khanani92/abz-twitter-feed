@@ -49,4 +49,5 @@ if ( is_admin() )
 	require_once TFS_PLUGIN_DIR . '/admin/admin.php';
 		
 require_once TFS_PLUGIN_DIR . '/includes/functions.php';
-	
+require_once TFS_PLUGIN_DIR . '/admin/admin_setting_page.php';
+require_once TFS_PLUGIN_DIR . '/admin/tfs_widget.php';

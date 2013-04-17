@@ -73,7 +73,7 @@ class Tfs_Widget extends WP_Widget {
 		<?php 
 	}
 
-} // class Foo_Widget
+} // class Tfs_Widget
 
-// register Foo_Widget widget
+// register Tfs_Widget widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "tfs_widget" );' ) );

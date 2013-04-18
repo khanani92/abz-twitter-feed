@@ -1,1 +1,18 @@
-admin css file
+#wpcontent h3
+{
+	background:#f0f0f0;
+	border: solid 1px #dfdfdf;
+	margin: 25px 0 15px 0;
+	padding: 8px .6em;
+	display:block;
+	color: #21759b;
+	-webkit-border-radius: 3px;
+}
+.form-table th
+{
+	padding:13px;
+}
+#wpcontent tbody tr:nth-child(odd)
+{
+	background: #f7f7f7;
+}

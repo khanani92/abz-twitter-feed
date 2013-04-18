@@ -37,7 +37,7 @@ function tfs_check_settings(){
 	global $settings;
 	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>Twitter Feeds.</strong>', 'tfs' ), menu_page_url( 'twitter-feeds', false ) );
 		
-	if($settings['color'])
+	if($settings['tfs_fiels_1'])
 	{
 		tfs_show_admin_message($msg, true);
 	}

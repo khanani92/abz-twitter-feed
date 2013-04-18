@@ -28,7 +28,20 @@ function tfs_check_wordpress_version(){
 		tfs_show_admin_message($msg, true);
 	}
 }
+//////////////////////////////////////////////////////////////////////////////
+// Check setting fiels are empty ? yes! then show notification
+//////////////////////////////////////////////////////////////////////////////
+add_action('admin_notices', 'tfs_check_settings', 9);
 
+function tfs_check_settings(){
+	global $settings;
+	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>Twitter Feeds.</strong>', 'tfs' ), menu_page_url( 'twitter-feeds', false ) );
+		
+	if($settings['color'])
+	{
+		tfs_show_admin_message($msg, true);
+	}
+}
 //////////////////////////////////////////////////////////////////////////////
 // Dispaly Setting Link on plugin page
 //////////////////////////////////////////////////////////////////////////////

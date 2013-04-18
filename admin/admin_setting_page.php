@@ -23,7 +23,7 @@ function my_admin_init() {
 	register_setting( 'tfs-settings-group', 'tfs-settings' );
  
 	// Sections
-	add_settings_section( 'section-one', __('Section One', 'tfs'), 'section_one_callback', 'tfs-plugin' );
+	add_settings_section( 'section-one', __('Required Settings', 'tfs'), 'section_one_callback', 'tfs-plugin' );
  
 	// Fields
 	add_settings_field( 'field-one', __('Field One', 'tfs'), 'field_one_callback', 'tfs-plugin', 'section-one' );
@@ -32,7 +32,7 @@ function my_admin_init() {
 $settings = get_option( 'tfs-settings' );
  
 function section_one_callback() {
-	printf(__('Some help text goes here. ', 'tfs'));
+	printf(__('Copy and paste your <strong>Keys</strong> and <strong>Tokens</strong>.', 'tfs'));
 }
  
 function field_one_callback() {

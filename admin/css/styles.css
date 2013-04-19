@@ -8,6 +8,10 @@
 	color: #21759b;
 	-webkit-border-radius: 3px;
 }
+.form-table
+{
+	margin-top: 15px;
+}
 .form-table th
 {
 	padding:13px;

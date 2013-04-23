@@ -73,6 +73,4 @@ function tfs_admin_enqueue_scripts( $hook ) {
 	// js files
     wp_register_script('tfs-admin-script', TFS_PLUGIN_URL.'/admin/js/script.js','',TFS_VERSION, false);
 	wp_enqueue_script(array( 'jquery','tfs-admin-script' ));
-	
-
 }

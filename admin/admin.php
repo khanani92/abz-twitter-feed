@@ -35,7 +35,7 @@ add_action('admin_notices', 'abz_twitter_feed_check_settings', 9);
 
 function abz_twitter_feed_check_settings(){
 	global $settings;
-	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>AppBakerz Twitter Feed.</strong>', 'abz_twitter_feed' ), menu_page_url( 'twitter-feeds', false ) );
+	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>AppBakerz Twitter Feed.</strong>', 'abz_twitter_feed' ), menu_page_url( 'abz_twitter_feed', false ) );
 		
 	if($settings['tfs_fiels_1'])
 	{
@@ -51,7 +51,7 @@ function abz_twitter_feed_plugin_action_links( $links, $file ) {
 	if ( $file != ABZ_TWITTER_FEED_PLUGIN_BASENAME )
 		return $links;
 
-	$settings_link = '<a href="' . menu_page_url( 'twitter-feeds', false ) . '">'
+	$settings_link = '<a href="' . menu_page_url( 'abz_twitter_feed', false ) . '">'
 		. esc_html( __( 'Settings', 'abz_twitter_feed' ) ) . '</a>';
 
 	array_unshift( $links, $settings_link );

@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Twitter Feeds
+Plugin Name: AppBakerz Twitter Feed
 Plugin URI: http://www.appbakerz.com/
 Description: Just another Twitter Feeds plugin. Simple but flexible.
-Author: Application Bakers
+Author: AppBakerz
 Author URI: http://www.appbakerz.com
-Text Domain: tfs
+Text Domain: abz_twitter_feed
 Domain Path: /languages/
 Version: 0.1
 */
 
-/*  Copyright 2013 Application Bakers (email: info@appbakerz.com)
+/*  Copyright 2013 AppBakerz (email: info@appbakerz.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,26 +28,26 @@ Version: 0.1
 */
 	
 // Settings and/or Configuration Details go here... 
-define( 'TFS_VERSION', '0.1' );
+define( 'ABZ_TWITTER_FEED_VERSION', '0.1' );
 
-define( 'TFS_REQUIRED_WP_VERSION', '3.0' );
+define( 'ABZ_TWITTER_FEED_REQUIRED_WP_VERSION', '3.0' );
 
-if ( ! defined( 'TFS_PLUGIN_BASENAME' ) )
-	define( 'TFS_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+if ( ! defined( 'ABZ_TWITTER_FEED_PLUGIN_BASENAME' ) )
+	define( 'ABZ_TWITTER_FEED_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-if ( ! defined( 'TFS_PLUGIN_NAME' ) )
-	define( 'TFS_PLUGIN_NAME', trim( dirname( TFS_PLUGIN_BASENAME ), '/' ) );
+if ( ! defined( 'ABZ_TWITTER_FEED_PLUGIN_NAME' ) )
+	define( 'ABZ_TWITTER_FEED_PLUGIN_NAME', trim( dirname( ABZ_TWITTER_FEED_PLUGIN_BASENAME ), '/' ) );
 
-if ( ! defined( 'TFS_PLUGIN_DIR' ) )
-	define( 'TFS_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
+if ( ! defined( 'ABZ_TWITTER_FEED_PLUGIN_DIR' ) )
+	define( 'ABZ_TWITTER_FEED_PLUGIN_DIR', untrailingslashit( dirname( __FILE__ ) ) );
 
-if ( ! defined( 'TFS_PLUGIN_URL' ) )
-	define( 'TFS_PLUGIN_URL', untrailingslashit( plugins_url( '', __FILE__ ) ) );
+if ( ! defined( 'ABZ_TWITTER_FEED_PLUGIN_URL' ) )
+	define( 'ABZ_TWITTER_FEED_PLUGIN_URL', untrailingslashit( plugins_url( '', __FILE__ ) ) );
 
 // include() or require() any necessary files here... 
 if ( is_admin() )
-	require_once TFS_PLUGIN_DIR . '/admin/admin.php';
+	require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/admin/admin.php';
 		
-require_once TFS_PLUGIN_DIR . '/includes/functions.php';
-require_once TFS_PLUGIN_DIR . '/admin/admin_setting_page.php';
-require_once TFS_PLUGIN_DIR . '/admin/tfs_widget.php';
+require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/includes/functions.php';
+require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/admin/admin_setting_page.php';
+require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/admin/abz_twitter_feed_widget.php';

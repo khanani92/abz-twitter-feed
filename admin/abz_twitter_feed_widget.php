@@ -1,17 +1,17 @@
 <?php
 /**
- * Adds Tfs_Widget widget.
+ * Adds ABZ_Twitter_Feed_Widget widget.
  */
-class Tfs_Widget extends WP_Widget {
+class ABZ_Twitter_Feed_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
-	 		'tfs_widget', // Base ID
-			'Twitter Feeds', // Name
-			array( 'description' => __( 'Twitter Feeds Widget for tweets', 'tfs' ), ) // Args
+	 		'abz_twitter_feed_widget', // Base ID
+			'AppBakerz Twitter Feed', // Name
+			array( 'description' => __( 'AppBakerz Twitter Feed Widget for tweets', 'abz_twitter_feed' ), ) // Args
 		);
 	}
 
@@ -30,7 +30,7 @@ class Tfs_Widget extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
-		echo __( 'Hello, World!', 'tfs' );
+		echo __( 'Hello, World!', 'abz_twitter_feed' );
 		echo $after_widget;
 	}
 
@@ -63,7 +63,7 @@ class Tfs_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'Twitter Feeds', 'tfs' );
+			$title = __( 'AppBakerz Twitter Feed', 'abz_twitter_feed' );
 		}
 		?>
 		<p>
@@ -73,7 +73,7 @@ class Tfs_Widget extends WP_Widget {
 		<?php 
 	}
 
-} // class Tfs_Widget
+} // class ABZ_Twitter_Feed_Widget
 
-// register Tfs_Widget widget
-add_action( 'widgets_init', create_function( '', 'register_widget( "tfs_widget" );' ) );
+// register ABZ_Twitter_Feed_Widget widget
+add_action( 'widgets_init', create_function( '', 'register_widget( "abz_twitter_feed_widget" );' ) );

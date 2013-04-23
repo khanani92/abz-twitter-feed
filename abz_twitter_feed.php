@@ -2,7 +2,7 @@
 /*
 Plugin Name: AppBakerz Twitter Feed
 Plugin URI: http://www.appbakerz.com/
-Description: Just another Twitter Feeds plugin. Simple but flexible.
+Description: Just another AppBakerz Twitter Feed plugin. Simple but flexible.
 Author: AppBakerz
 Author URI: http://www.appbakerz.com
 Text Domain: abz_twitter_feed

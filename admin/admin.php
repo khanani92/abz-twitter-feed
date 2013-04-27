@@ -65,7 +65,7 @@ function abz_twitter_feed_plugin_action_links( $links, $file ) {
 add_action( 'admin_enqueue_scripts', 'abz_twitter_feed_admin_enqueue_scripts' );
 
 function abz_twitter_feed_admin_enqueue_scripts( $hook ) {
-	if ( false === strpos( $hook, 'twitter-feeds' ) )
+	if ( false === strpos( $hook, 'abz_twitter_feed' ) )
 		return;
 	// css files	
     wp_register_style('abz_twitter_feed-admin-css', ABZ_TWITTER_FEED_PLUGIN_URL.'/admin/css/styles.css','',ABZ_TWITTER_FEED_VERSION, 'all');

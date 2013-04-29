@@ -37,8 +37,8 @@ function abz_get_twitter_feed(){
 	//TODO: If values missing, send an error and if admin_logged_in send actual reason 
 
 	$oauth = array( 'oauth_consumer_key' => $consumer_key,
-					'oauth_consumer_secret' => $oauth_consumer_secret,
 					'oauth_token' => $oauth_access_token,
+					'oauth_consumer_secret' => $consumer_secret,
 					'oauth_access_token_secret' => $oauth_access_token_secret
 					);
 

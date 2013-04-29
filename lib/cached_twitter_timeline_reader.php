@@ -10,7 +10,9 @@ class ABZ_Cached_Twitter_Timeline_Reader {
 
 	public function get_json() {
 
-		$cache_file = 'twitter.json';
+		$cache_file = ABZ_TWITTER_FEED_PLUGIN_DIR . '/twitter.json';
+		
+		//TODO: The duration should be configureable from settings
 		$cache_for = 5; // cache results for five minutes
 
 		$api_cache = new API_cache ($this, $cache_for, $cache_file);

@@ -3,6 +3,7 @@
  * Adds ABZ_Twitter_Feed_Widget widget.
  */
 class ABZ_Twitter_Feed_Widget extends WP_Widget {
+	//public static $should_load_scripts = false;
 
 	/**
 	 * Register widget with WordPress.
@@ -13,6 +14,10 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 			'AppBakerz Twitter Feed', // Name
 			array( 'description' => __( 'AppBakerz Twitter Feed Widget for tweets', 'abz_twitter_feed' ), ) // Args
 		);
+		
+		if (is_active_widget( '', '', 'abz_twitter_feed_widget' )) {
+			add_action( 'wp_enqueue_scripts', 'abz_twitter_feed_enqueue_scripts' );
+		}
 	}
 
 	/**
@@ -24,13 +29,16 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+		//self::$should_load_scripts = true;
+	
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance['title'] );
+		$default_text = $instance['defaulttext'];
 
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
-		echo __( 'Hello, World!', 'abz_twitter_feed' );
+		echo '<span class="spinner"></span> ' . $default_text;
 		echo $after_widget;
 	}
 
@@ -47,6 +55,7 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['defaulttext'] =  $new_instance['defaulttext'] ;
 
 		return $instance;
 	}
@@ -63,12 +72,23 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'AppBakerz Twitter Feed', 'abz_twitter_feed' );
+			$title = __( 'WIDGET_TITLE', 'abz_twitter_feed' );
+		}
+
+		if ( isset( $instance[ 'defaulttext' ] ) ) {
+			$default_text = $instance[ 'defaulttext' ];
+		}
+		else {
+			$default_text = __( 'WIDGET_DEFAULT_TEXT', 'abz_twitter_feed' );
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'WIDGET_TITLE_LABEL' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'defaulttext' ); ?>"><?php _e( 'WIDGET_DEFAULT_TEXT_LABEL' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'defaulttext' ); ?>" name="<?php echo $this->get_field_name( 'defaulttext' ); ?>" type="text" value="<?php echo esc_attr( $default_text ); ?>" />
 		</p>
 		<?php 
 	}

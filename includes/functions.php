@@ -7,17 +7,17 @@ require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/lib/cached_twitter_timeline_reader.
 //////////////////////////////////////////////////////////////////////////////
 function abz_twitter_feed_register_scripts() {
 	// css files
-    wp_register_style('abz_twitter_feed-admin-css', ABZ_TWITTER_FEED_PLUGIN_URL.'/includes/css/styles.css','',ABZ_TWITTER_FEED_VERSION, 'all');
+    wp_register_style('abz_twitter_feed-css', ABZ_TWITTER_FEED_PLUGIN_URL.'/includes/css/styles.css','',ABZ_TWITTER_FEED_VERSION, 'all');
 	// js files
-    wp_register_script('abz_twitter_feed-admin-script', ABZ_TWITTER_FEED_PLUGIN_URL.'/includes/js/script.js','',ABZ_TWITTER_FEED_VERSION, false);
+    wp_register_script('abz_twitter_feed-script', ABZ_TWITTER_FEED_PLUGIN_URL.'/includes/js/script.js','',ABZ_TWITTER_FEED_VERSION, false);
 }
 add_action('init', 'abz_twitter_feed_register_scripts');
 
 function abz_twitter_feed_enqueue_scripts() {
 	// css files
-	wp_enqueue_style(array( 'abz_twitter_feed-admin-css' ));
+	wp_enqueue_style(array( 'abz_twitter_feed-css' ));
 	// js files
-	wp_enqueue_script(array( 'jquery','abz_twitter_feed-admin-script' ));
+	wp_enqueue_script(array( 'jquery','abz_twitter_feed-script' ));
 }
 
 ////////////////////////////////////////////////////////////////////

@@ -2,7 +2,7 @@
 add_action( 'admin_menu', 'ABZ_Twitter_Feed_Admin::do_admin_menu' );
 add_action( 'admin_init', 'ABZ_Twitter_Feed_Admin::do_admin_init' );
  
-$settings = get_option( 'abz-twitter-feed-settings' );
+$abz_twitter_feed_settings = get_option( 'abz-twitter-feed-settings' );
  
 class ABZ_Twitter_Feed_Admin {
 
@@ -63,8 +63,8 @@ class ABZ_Twitter_Feed_Admin {
 
 
 	private static function do_textbox($field_name) {
-		global $settings;
-		$field = esc_attr( $settings[$field_name] );
+		global $abz_twitter_feed_settings;
+		$field = esc_attr( $abz_twitter_feed_settings[$field_name] );
 		echo "<input class='regular-text' type='text' name='abz-twitter-feed-settings[$field_name]' value='$field' />";
 	}
 

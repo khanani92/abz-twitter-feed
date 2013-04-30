@@ -29,15 +29,20 @@ function abz_twitter_feed_check_wordpress_version(){
 	}
 }
 //////////////////////////////////////////////////////////////////////////////
-// Check setting fiels are empty ? yes! then show notification
+// Check setting fields are empty ? yes! then show notification
 //////////////////////////////////////////////////////////////////////////////
 add_action('admin_notices', 'abz_twitter_feed_check_settings', 9);
 
 function abz_twitter_feed_check_settings(){
-	global $settings;
+	global $abz_twitter_feed_settings;
 	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>AppBakerz Twitter Feed.</strong>', 'abz_twitter_feed' ), menu_page_url( 'abz_twitter_feed', false ) );
 		
-	if($settings['tfs_fiels_1'])
+	if(
+		!$abz_twitter_feed_settings['consumer_key']          ||
+		!$abz_twitter_feed_settings['consumer_secret']       || 
+		!$abz_twitter_feed_settings['access_token']          || 
+		!$abz_twitter_feed_settings['access_token_secret'] 
+	)
 	{
 		abz_twitter_feed_show_admin_message($msg, true);
 	}

@@ -25,14 +25,14 @@ function abz_twitter_feed_enqueue_scripts() {
 ////////////////////////////////////////////////////////////////////
 function abz_get_twitter_feed(){
 	//get the data from ajax() call
-	//$title = $_POST['title'];
-
+	global $abz_twitter_feed_settings;
+	
 	//TODO: Fill these values by the ones supplied on extension's settings page
-	$consumer_key = 'FyMvI7VdIHa77M5YlodA';
-	$consumer_secret = '5VXaEoWUQAC7Z3MkiA3fAKy0gqi1hnSoXkSUNctLA';
+	$consumer_key = $abz_twitter_feed_settings['consumer_key'];
+	$consumer_secret = $abz_twitter_feed_settings['consumer_secret'];
 
-	$oauth_access_token = '526178478-HaGAiDnLuPOGLvqSkqXoxE6I9IICUqK2TQ8QibUf';
-	$oauth_access_token_secret = 'wdLkH5TiDsXLjNcw7ILD8mU5gdK3j6IUzdN53onfA';
+	$oauth_access_token = $abz_twitter_feed_settings['access_token'];
+	$oauth_access_token_secret = $abz_twitter_feed_settings['access_token_secret'];
 
 	//TODO: If values missing, send an error and if admin_logged_in send actual reason 
 

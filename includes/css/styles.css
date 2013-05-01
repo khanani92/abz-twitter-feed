@@ -1,0 +1,19 @@
+.abz_twitter_feed
+{
+	width:100%;	
+}
+.abz_twitter_feed li
+{
+	border-bottom:solid 1px #ccc;
+	padding:15px 0;
+	list-style:none;
+}
+.abz_twitter_feed li img
+{
+	padding:0 10px 10px 0;
+}
+.tweet_date
+{
+	text-transform: capitalize;
+	color:#999;
+}

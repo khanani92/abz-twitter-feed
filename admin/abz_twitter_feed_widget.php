@@ -38,7 +38,7 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
-		echo '<span class="spinner"></span> ' . $default_text;
+		echo '<div class="abz_twitter_feed"></div> ';
 		echo $after_widget;
 	}
 
@@ -72,7 +72,7 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'WIDGET_TITLE', 'abz_twitter_feed' );
+			$title = __( 'Latest Tweets', 'abz_twitter_feed' );
 		}
 
 		if ( isset( $instance[ 'defaulttext' ] ) ) {

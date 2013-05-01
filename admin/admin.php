@@ -21,7 +21,7 @@ add_action('admin_notices', 'abz_twitter_feed_check_wordpress_version', 9);
 function abz_twitter_feed_check_wordpress_version(){
 	global $wp_version;
 	
-	$msg =  sprintf( __( '<strong>AppBakerz Twitter Feed %1$s</strong> requires WordPress %2$s or higher. Please <a href="%3$s">Update WordPress</a> first.', 'abz_twitter_feed' ), ABZ_TWITTER_FEED_VERSION, ABZ_TWITTER_FEED_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) );
+	$msg =  sprintf( __( 'WORDPRESS_VERSION_ALERT_MESSAGE', 'abz_twitter_feed' ), ABZ_TWITTER_FEED_VERSION, ABZ_TWITTER_FEED_REQUIRED_WP_VERSION, admin_url( 'update-core.php' ) );
 		
 	if(version_compare($wp_version, ABZ_TWITTER_FEED_REQUIRED_WP_VERSION, '<'))
 	{
@@ -35,7 +35,7 @@ add_action('admin_notices', 'abz_twitter_feed_check_settings', 9);
 
 function abz_twitter_feed_check_settings(){
 	global $abz_twitter_feed_settings;
-	$msg =  sprintf( __( 'Twitter requires authentication by OAuth. You will need to <a href="%1$s">update your settings</a> to complete installation of <strong>AppBakerz Twitter Feed.</strong>', 'abz_twitter_feed' ), menu_page_url( 'abz_twitter_feed', false ) );
+	$msg =  sprintf( __( 'BLANK_SETTING_ALERT_MESSAGE', 'abz_twitter_feed' ), menu_page_url( 'abz_twitter_feed', false ) );
 		
 	if(
 		!$abz_twitter_feed_settings['consumer_key']          ||
@@ -57,7 +57,7 @@ function abz_twitter_feed_plugin_action_links( $links, $file ) {
 		return $links;
 
 	$settings_link = '<a href="' . menu_page_url( 'abz_twitter_feed', false ) . '">'
-		. esc_html( __( 'Settings', 'abz_twitter_feed' ) ) . '</a>';
+		. esc_html( __( 'ACTION_LINK_TITLE', 'abz_twitter_feed' ) ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 

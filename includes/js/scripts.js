@@ -4,9 +4,9 @@
 
         // Establish our default settings
         var settings = $.extend({
-            count              :   3,
-            page               :   1,
-			containerHeight    :   300
+            count              :3,
+            page               :1,
+			containerHeight    :300
         }, options);
 
 

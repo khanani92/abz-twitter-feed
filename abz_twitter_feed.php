@@ -51,3 +51,8 @@ if ( is_admin() )
 require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/includes/functions.php';
 require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/admin/admin_setting_page.php';
 require_once ABZ_TWITTER_FEED_PLUGIN_DIR . '/admin/abz_twitter_feed_widget.php';
+
+function abz_twitter_feed_load_plugin_textdomain() {
+	load_plugin_textdomain( 'abz_twitter_feed', false, 'abz-twitter-feed/languages' );
+}
+add_action('plugins_loaded', 'abz_twitter_feed_load_plugin_textdomain');

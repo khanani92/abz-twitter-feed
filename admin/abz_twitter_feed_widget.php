@@ -11,8 +11,8 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'abz_twitter_feed_widget', // Base ID
-			'AppBakerz Twitter Feed', // Name
-			array( 'description' => __( 'AppBakerz Twitter Feed Widget for tweets', 'abz_twitter_feed' ), ) // Args
+			__( 'ABZ_PLUGIN_NAME', 'abz_twitter_feed' ), // Name
+			array( 'description' => __( 'ABZ_WIDGET_DESCRIPTION', 'abz_twitter_feed' ), ) // Args
 		);
 		
 		if (is_active_widget( '', '', 'abz_twitter_feed_widget' )) {
@@ -72,7 +72,7 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'Latest Tweets', 'abz_twitter_feed' );
+			$title = __( 'DEFAULT_TITLE', 'abz_twitter_feed' );
 		}
 
 		if ( isset( $instance[ 'defaulttext' ] ) ) {
@@ -83,11 +83,11 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'WIDGET_TITLE_LABEL' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'DEFAULT_TITLE_LABLE', 'abz_twitter_feed' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'defaulttext' ); ?>"><?php _e( 'WIDGET_DEFAULT_TEXT_LABEL' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'defaulttext' ); ?>"><?php _e( 'WIDGET_DEFAULT_TEXT_LABEL', 'abz_twitter_feed' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'defaulttext' ); ?>" name="<?php echo $this->get_field_name( 'defaulttext' ); ?>" type="text" value="<?php echo esc_attr( $default_text ); ?>" />
 		</p>
 		<?php 

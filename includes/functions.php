@@ -19,6 +19,39 @@ function abz_twitter_feed_enqueue_scripts() {
 }
 
 ////////////////////////////////////////////////////////////////////
+// Add Ajax Handler for test Settings 
+////////////////////////////////////////////////////////////////////
+function abz_test_oauth_settings(){
+	//get the data from ajax() call
+	global $abz_twitter_feed_settings;
+	
+	//TODO: Fill these values by the ones supplied on extension's settings page
+	$consumer_key = 'dasdarewefs';
+	$consumer_secret = $abz_twitter_feed_settings['consumer_secret'];
+
+	$oauth_access_token = $abz_twitter_feed_settings['access_token'];
+	$oauth_access_token_secret = $abz_twitter_feed_settings['access_token_secret'];
+
+	//TODO: If values missing, send an error and if admin_logged_in send actual reason 
+
+	$oauth = array( 'oauth_consumer_key' => $consumer_key,
+					'oauth_token' => $oauth_access_token,
+					'oauth_consumer_secret' => $consumer_secret,
+					'oauth_access_token_secret' => $oauth_access_token_secret
+					);
+
+	$reader = new ABZ_Twitter_Api_Client($oauth);
+
+	$results = $reader ->read_timeline();
+
+	// Return the String
+	die($results);
+}
+// creating Ajax call for WordPress
+add_action( 'wp_ajax_nopriv_abz_test_oauth_settings', 'abz_test_oauth_settings' );
+add_action( 'wp_ajax_abz_test_oauth_settings', 'abz_test_oauth_settings' );
+
+////////////////////////////////////////////////////////////////////
 // Add Ajax Handler for getting twitter timeline
 ////////////////////////////////////////////////////////////////////
 function abz_get_twitter_feed(){

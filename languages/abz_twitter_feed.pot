@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ABZ Twitter Feed\n"
-"POT-Creation-Date: 2013-05-02 03:13+0500\n"
-"PO-Revision-Date: 2013-05-02 03:14+0500\n"
-"Last-Translator: AppBakerZ <info@appbakerz.com>\n"
+"POT-Creation-Date: 2013-05-03 17:12+0500\n"
+"PO-Revision-Date: 2013-05-03 17:38+0500\n"
+"Last-Translator: furqan <ds@sdfs.sdf>\n"
 "Language-Team: AppBakerZ <info@appbakerz.com>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
@@ -17,99 +17,84 @@ msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:14
 msgid "ABZ_PLUGIN_NAME"
-msgstr "AppBakerz Twitter Feed"
+msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:15
 msgid "ABZ_WIDGET_DESCRIPTION"
-msgstr "AppBakerz Twitter Feed Widget for tweets"
+msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:75
 msgid "DEFAULT_TITLE"
-msgstr "Latest Tweets"
+msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:82
 msgid "WIDGET_DEFAULT_TEXT"
-msgstr "Widget Default Text"
+msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:86
 msgid "DEFAULT_TITLE_LABLE"
-msgstr "Title"
+msgstr ""
 
 #: ../admin/abz_twitter_feed_widget.php:90
 msgid "WIDGET_DEFAULT_TEXT_LABEL"
-msgstr "Widget Default Text Lable"
+msgstr ""
 
 #: ../admin/admin.php:24
 msgid "WORDPRESS_VERSION_ALERT_MESSAGE"
 msgstr ""
-"<strong>AppBakerz Twitter Feed %1$s</strong> requires WordPress %2$s or "
-"higher. Please <a href=\"%3$s\">Update WordPress</a> first."
 
 #: ../admin/admin.php:38
 msgid "BLANK_SETTING_ALERT_MESSAGE"
 msgstr ""
-"Twitter requires authentication by OAuth. You will need to <a href=\"%1$s"
-"\">update your settings</a> to complete installation of <strong>AppBakerz "
-"Twitter Feed.</strong>"
 
 #: ../admin/admin.php:60
 msgid "ACTION_LINK_TITLE"
-msgstr "Settings"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:13
 msgid "SETTING_PAGE_MENU_LABLE"
-msgstr "AppBakerz Twitter Feed"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:23
 msgid "REQUIRED_SETTING_TITLE"
-msgstr "Required Settings"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:24
 msgid "GENERAL_SETTING_TITLE"
-msgstr "General Settings"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:27
 msgid "CONSUMER_KEY_TITLE"
-msgstr "Consumer Key"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:28
 msgid "CONSUMER_SECRET_TITLE"
-msgstr "Consumer Secret"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:29
 msgid "ACCESS_TOKEN_TITLE"
-msgstr "Access Token"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:30
 msgid "ACCESS_TOKEN_SECRET_TITLE"
-msgstr "Access Token Secret"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:33
 msgid "TWEET_COUNT_TITLE"
-msgstr "Tweet Count"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:41
 msgid "SETTING_PAGE_TITLE"
-msgstr "AppBakerz Twitter Feed Options"
+msgstr ""
 
 #: ../admin/admin_setting_page.php:54
 msgid "REQUIRED_SETTING_GUIDANCE_POINT_ONE"
 msgstr ""
-"Register this site as an application on <strong><a target='_blank' "
-"href='http://dev.twitter.com/apps/new'>Twitter's application registration "
-"page</a></strong>."
 
 #: ../admin/admin_setting_page.php:55
 msgid "REQUIRED_SETTING_GUIDANCE_POINT_TWO"
 msgstr ""
-"Copy and paste your <strong>Key, Token</strong> and <strong>Secrets</strong>."
 
 #: ../admin/admin_setting_page.php:61
 msgid "GENERAL_SETTING_AREA_DESCRIPTION"
-msgstr "General Settings Area."
-
-#~ msgid "AppBakerz Twitter Feed"
-#~ msgstr "AppBakerz Twitter Feed"
-
-#~ msgid "WIDGET_TITLE_LABEL"
-#~ msgstr "Widget Title Lable"
+msgstr ""

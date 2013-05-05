@@ -59,7 +59,7 @@ function abz_twitter_feed_plugin_action_links( $links, $file ) {
 	$settings_link = '<a href="' . menu_page_url( 'abz_twitter_feed', false ) . '">'
 		. esc_html( __( 'ACTION_LINK_TITLE', 'abz_twitter_feed' ) ) . '</a>';
 
-	array_unshift( $links, $settings_link );
+	array_push( $links, $settings_link );
 
 	return $links;
 }

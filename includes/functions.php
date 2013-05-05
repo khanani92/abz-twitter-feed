@@ -21,19 +21,42 @@ function abz_twitter_feed_enqueue_scripts() {
 ////////////////////////////////////////////////////////////////////
 // Add Ajax Handler for getting twitter timeline
 ////////////////////////////////////////////////////////////////////
+/**
+* Returns a string that contains the json representing the timeline
+*/
 function abz_get_twitter_feed(){
 	//get the data from ajax() call
 	global $abz_twitter_feed_settings;
 	
-	//TODO: Fill these values by the ones supplied on extension's settings page
 	$consumer_key = $abz_twitter_feed_settings['consumer_key'];
 	$consumer_secret = $abz_twitter_feed_settings['consumer_secret'];
 
 	$oauth_access_token = $abz_twitter_feed_settings['access_token'];
 	$oauth_access_token_secret = $abz_twitter_feed_settings['access_token_secret'];
 
-	//TODO: If values missing, send an error and if admin_logged_in send actual reason 
+	
+	//*
+	if (!($consumer_key && $consumer_secret && $oauth_access_token && $oauth_access_token_secret)) {
+		
+		//TODO: If one or more values missing, send an error and if admin_logged_in send actual reason 
 
+				
+		if (current_user_can( 'manage_options' )) {
+			//TODO: l8n 
+			$err_msg = "<div>" . __("AppBakerz Twitter Feed is not configured properly.") . "<br>";
+			//TODO: Correct Link is not shown. 
+			$err_msg = $err_msg . sprintf(__( "Visit %splugin settings page%s to complete configuration."), "<a href='" . menu_page_url( 'abz_twitter_feed', false ) . "'>", "</a>") . "</div>";
+		}
+		else {
+			//TODO: l8n 
+			$err_msg = __("<div>Twitter Feed is unavailable!</div>");
+		}
+		
+		return '{"status": "error", "msg": "' . $err_msg . '"}';
+
+	}	
+	//*/
+	
 	$oauth = array( 'oauth_consumer_key' => $consumer_key,
 					'oauth_token' => $oauth_access_token,
 					'oauth_consumer_secret' => $consumer_secret,
@@ -44,9 +67,20 @@ function abz_get_twitter_feed(){
 
 	$results = $reader ->get_json();
 
+	return $results;
+}
+
+/*******************************************************************************
+* Called from ajax. The request will terminate when this function is called
+********************************************************************************/
+function abz_get_twitter_feed_ajax(){
+	$results = abz_get_twitter_feed();
+
 	// Return the String
 	die($results);
 }
+
+
 // creating Ajax call for WordPress
-add_action( 'wp_ajax_nopriv_abz_get_twitter_feed', 'abz_get_twitter_feed' );
-add_action( 'wp_ajax_abz_get_twitter_feed', 'abz_get_twitter_feed' );
+add_action( 'wp_ajax_nopriv_abz_get_twitter_feed', 'abz_get_twitter_feed_ajax' );
+add_action( 'wp_ajax_abz_get_twitter_feed', 'abz_get_twitter_feed_ajax' );

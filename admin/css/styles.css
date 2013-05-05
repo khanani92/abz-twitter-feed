@@ -20,3 +20,18 @@
 {
 	background: #f7f7f7;
 }
+.error
+{
+	color:#900;
+	padding:2px 10px;
+	border:solid 1px #c00;
+	margin-left:15px;
+	background-color: #ffebe8;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display:none;
+}
+#test
+{
+	margin-right:10px;
+}

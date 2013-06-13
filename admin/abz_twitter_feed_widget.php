@@ -81,6 +81,12 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		else {
 			$default_text = __( 'WIDGET_DEFAULT_TEXT', 'abz_twitter_feed' );
 		}
+        if ( isset( $instance[ 'data_count' ] ) ) {
+            $data_count = $instance[ 'data_count' ];
+        }
+        else {
+            $data_count = __( 6, 'abz_twitter_feed' );
+        }
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'DEFAULT_TITLE_LABLE', 'abz_twitter_feed' ); ?></label> 
@@ -90,6 +96,10 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id( 'defaulttext' ); ?>"><?php _e( 'WIDGET_DEFAULT_TEXT_LABEL', 'abz_twitter_feed' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'defaulttext' ); ?>" name="<?php echo $this->get_field_name( 'defaulttext' ); ?>" type="text" value="<?php echo esc_attr( $default_text ); ?>" />
 		</p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'data_count' ); ?>"><?php _e( 'Tweets Show', 'abz_twitter_feed' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'data_count' ); ?>" name="<?php echo $this->get_field_name( 'data_count' ); ?>" type="text" value="<?php echo esc_attr( $data_count ); ?>" />
+        </p>
 		<?php 
 	}
 

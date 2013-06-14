@@ -97,10 +97,10 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id( 'defaulttext' ); ?>"><?php _e( 'WIDGET_DEFAULT_TEXT_LABEL', 'abz_twitter_feed' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'defaulttext' ); ?>" name="<?php echo $this->get_field_name( 'defaulttext' ); ?>" type="text" value="<?php echo esc_attr( $default_text ); ?>" />
 		</p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of Tweets to Show', 'abz_twitter_feed' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="number" value="<?php echo esc_attr( $data_count ); ?>" min="1" />
-        </p>
+                <p>
+                <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of Tweets to Show', 'abz_twitter_feed' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="number" value="<?php echo esc_attr( $count ); ?>" min="1" />
+                </p>
 		<?php 
 	}
 

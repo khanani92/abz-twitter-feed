@@ -82,12 +82,12 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		else {
 			$default_text = __( 'WIDGET_DEFAULT_TEXT', 'abz_twitter_feed' );
 		}
-        if ( isset( $instance[ 'count' ] ) ) {
-            $count = $instance[ 'count' ];
-        }
-        else {
-            $count = __( 6, 'abz_twitter_feed' );
-        }
+                if ( isset( $instance[ 'count' ] ) ) {
+                        $count = $instance[ 'count' ];
+                }
+                else {
+                        $count = __( 6, 'abz_twitter_feed' );
+                }
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'DEFAULT_TITLE_LABLE', 'abz_twitter_feed' ); ?></label> 

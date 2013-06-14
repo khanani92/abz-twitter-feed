@@ -56,6 +56,7 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		$instance = array();
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['defaulttext'] =  $new_instance['defaulttext'] ;
+        $instance['count'] =  $new_instance['count'] ;
 
 		return $instance;
 	}
@@ -81,11 +82,11 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		else {
 			$default_text = __( 'WIDGET_DEFAULT_TEXT', 'abz_twitter_feed' );
 		}
-        if ( isset( $instance[ 'data_count' ] ) ) {
-            $data_count = $instance[ 'data_count' ];
+        if ( isset( $instance[ 'count' ] ) ) {
+            $count = $instance[ 'count' ];
         }
         else {
-            $data_count = __( 6, 'abz_twitter_feed' );
+            $count = __( 6, 'abz_twitter_feed' );
         }
 		?>
 		<p>
@@ -97,8 +98,8 @@ class ABZ_Twitter_Feed_Widget extends WP_Widget {
 		<input class="widefat" id="<?php echo $this->get_field_id( 'defaulttext' ); ?>" name="<?php echo $this->get_field_name( 'defaulttext' ); ?>" type="text" value="<?php echo esc_attr( $default_text ); ?>" />
 		</p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'data_count' ); ?>"><?php _e( 'Tweets Show', 'abz_twitter_feed' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'data_count' ); ?>" name="<?php echo $this->get_field_name( 'data_count' ); ?>" type="text" value="<?php echo esc_attr( $data_count ); ?>" />
+            <label for="<?php echo $this->get_field_id( 'data_count' ); ?>"><?php _e( 'Number of Tweets to Show', 'abz_twitter_feed' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'data_count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="number" value="<?php echo esc_attr( $data_count ); ?>" min="1" />
         </p>
 		<?php 
 	}
